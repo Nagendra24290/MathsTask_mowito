@@ -1,110 +1,103 @@
-🔢 Math Robotics Task – FK + Quaternion Conversion
-🧮 Robotics Mathematics Project – Mowito Internship
+🔢 Robotics Mathematics Tasks – FK + Quaternion Conversion
+🧮 Mowito Internship – Robotics Math Module
 
 
 
 
 
 
-📘 Project Summary
+This repository contains two core robotics mathematics tasks implemented in Python:
+✔ Euler ↔ Quaternion Conversion
+✔ 2-DOF Forward Kinematics with Visualization
 
-This repository contains two core robotics mathematics modules:
+These concepts form the foundation of robot motion representation and kinematic analysis.
 
-Task	Description	Status
-Angle Conversions	Euler ↔ Quaternion conversions using Python math	✔
-Forward Kinematics	2-DOF robotic arm arm visualization	✔
+📌 Project Structure
+math_task/
+│
+├── conversions/
+│   ├── euler_to_quaternion.py
+│   ├── quaternion_to_euler.py
+│   └── conversion_test.py
+│
+└── forward_kinematics/
+    ├── fk_math.py
+    ├── fk_pygame_sim.py
+    └── media/ (add simulation screenshots)
 
-These mathematical fundamentals are essential for robotics motion representation and manipulation.
-
-🧩 PART A – Euler ↔ Quaternion Conversion
+🧩 PART A — Euler ↔ Quaternion Conversion
 🎯 Objective
 
 Convert between:
 
-Roll, Pitch, Yaw → Quaternion
+From	To
+Roll, Pitch, Yaw (Euler)	Quaternion
+Quaternion	Roll, Pitch, Yaw (Euler)
 
-Quaternion → Roll, Pitch, Yaw
+⭐ Supports angles in degrees
+⭐ Includes unit-tested sample values
 
-Using equations:
+📘 Mathematical Formulation
 
-qx = ...
-qy = ...
-qz = ...
-qw = ...
+Quaternion:
 
+qx = sin(roll/2) * cos(pitch/2) * cos(yaw/2) - cos(roll/2) * sin(pitch/2) * sin(yaw/2)
+qy = cos(roll/2) * sin(pitch/2) * cos(yaw/2) + sin(roll/2) * cos(pitch/2) * sin(yaw/2)
+qz = cos(roll/2) * cos(pitch/2) * sin(yaw/2) - sin(roll/2) * sin(pitch/2) * cos(yaw/2)
+qw = cos(roll/2) * cos(pitch/2) * cos(yaw/2) + sin(roll/2) * sin(pitch/2) * sin(yaw/2)
 
-📁 Folder Structure
-
-math_task/
-└── conversions/
-    ├── euler_to_quaternion.py
-    ├── quaternion_to_euler.py
-    └── conversion_test.py
-
-
-📌 Supports angles in degrees
-📌 Unit-tested sample values
-
-📸 Output Sample
-Euler Input	Quaternion Result
+📸 Sample Output
+Euler Input	Quaternion Output
 (30°, 0°, 60°)	(0.20, 0.34, 0.56, 0.73)
 
-➡ Add screenshot here: media/quaternion_terminal.png
+➡ Insert screenshot: media/quaternion_terminal.png
 
-🧩 PART B – Forward Kinematics with Visualization
+🧩 PART B — Forward Kinematics + Pygame Visualization
 🎯 Objective
 
-2-Link Robotic Arm FK:
+Compute 2-Link Robotic Arm End-Effector Position:
 
 x = L1*cos(θ1) + L2*cos(θ1 + θ2)
 y = L1*sin(θ1) + L2*sin(θ1 + θ2)
 
 
-📁 Folder Structure
+✔ Real-time motion visualization using Pygame
+✔ Keyboard-controlled joint angles
+✔ End-Effector coordinates displayed live
 
-math_task/
-└── forward_kinematics/
-    ├── fk_math.py            # End-effector compute
-    ├── fk_pygame_sim.py      # Graphical animation
-    └── README.md (this file)
+🎮 Simulation Preview
+Mode	Description
+Normal	Live joint manipulation + arm tracking
 
-
-📌 Real-time visualization using Pygame
-📌 Keyboard control for joint angles
-📌 End-effector coordinate display
-
-📸 Simulation UI
-Color Mode	Joint Motion Preview
-
-	
-
-(Add screenshots into media/ folder before uploading ✓)
+➡ Insert screenshots in media/ folder before uploading
 
 🔧 Installation
 pip install pygame numpy
 
-▶️ Run Programs
-Angle Conversions
+▶️ Running the Applications
+Angle Conversions:
 python3 conversions/conversion_test.py
 
-FK Simulation
+FK Simulation:
 python3 forward_kinematics/fk_pygame_sim.py
 
 📊 Example Console Output
 Angle1: 45°, Angle2: 20°
 End Effector Position → X: 95.2, Y: 70.8
 
-🧠 Skills Demonstrated
+🚀 Skills Demonstrated
 Topic	Applied In
 Euler Angles & Rotation	Quaternion Conversion
 Spatial Orientation	FK Simulation
-Trigonometry	Link Transformations
-Scientific Computing	Python Math Libraries
-Real-Time Visualization	Pygame
-🧑‍💻 Author
+Trigonometry	Arm link transformations
+Scientific Computing	Numpy & Math
+Real-Time UI	Pygame Graphics
+👨‍💻 Author
 
 Daggupati Nagendra
 Robotics & Automation Engineer
-Mowito Internship — Math Robotics Task
+Mowito Internship — Robotics Math Task
 
 📧 Email: daggupatinagendra24@gmail.com
+
+🔗 Portfolio (add when ready)
